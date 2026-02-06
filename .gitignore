@@ -1,0 +1,52 @@
+# Node & dependency artifacts
+node_modules/
+**/node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Coverage
+coverage/
+*.lcov
+
+# Build outputs
+/dist/
+/build/
+.next/
+.vercel/
+out/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+frontend/.env
+backend/.env
+
+# Generated
+*.tsbuildinfo
+.cache/
+
+# Uploads (keep if you want images versioned)
+backend/uploads/
+!backend/uploads/.gitkeep
+
+# Misc
+*.tgz
