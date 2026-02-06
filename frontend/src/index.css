@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Unified design tokens for light & dark. Light defaults in :root; dark overrides in .dark */
+:root {
+  /* Light mode palette */
+  --oc-bg: #ffffff;
+  --oc-surface-900: #ffffff; /* base */
+  --oc-surface-800: #ffffff; /* containers */
+  --oc-surface-750: #f8fafc; /* elevated hover */
+  --oc-surface-700: #f1f5f9; /* subtle panels */
+  --oc-surface-600: #e2e8f0; /* borders */
+  --oc-border: #e2e8f0;
+  --oc-border-strong: #cbd5e1;
+  --oc-text-strong: #0f172a;
+  --oc-text: #1e293b;
+  --oc-text-soft: #475569;
+  --oc-text-faint: #64748b;
+  --oc-accent: #0ea5e9; /* sky-500 */
+  --oc-accent-hover: #0284c7; /* sky-600 */
+  --oc-accent-muted: #075985; /* sky-800 */
+  --oc-danger: #dc2626;
+  --oc-danger-text: #991b1b;
+  --oc-focus-ring: #0ea5e9;
+}
+
+.dark {
+  --oc-bg: #0f172a; /* slate-900 */
+  --oc-surface-900: #0f172a;
+  --oc-surface-800: #1e293b;
+  --oc-surface-750: #24324a;
+  --oc-surface-700: #334155;
+  --oc-surface-600: #475569;
+  --oc-border: #334155;
+  --oc-border-strong: #475569;
+  --oc-text-strong: #f1f5f9;
+  --oc-text: #e2e8f0;
+  --oc-text-soft: #94a3b8;
+  --oc-text-faint: #64748b;
+  --oc-accent: #06b6d4; /* cyan-500 */
+  --oc-accent-hover: #0891b2; /* cyan-600 */
+  --oc-accent-muted: #155e75; /* cyan-800 */
+  --oc-danger: #f87171;
+  --oc-danger-text: #fecaca;
+  --oc-focus-ring: #06b6d4;
+}
+
+/* Global utility classes referencing tokens */
+.oc-bg {
+  background-color: var(--oc-bg);
+}
+.oc-surface {
+  background-color: var(--oc-surface-800);
+}
+.oc-surface-alt {
+  background-color: var(--oc-surface-700);
+}
+.oc-surface-elevated {
+  background-color: var(--oc-surface-750);
+}
+.oc-border {
+  border-color: var(--oc-border);
+}
+.oc-border-strong {
+  border-color: var(--oc-border-strong);
+}
+.oc-text {
+  color: var(--oc-text);
+}
+.oc-text-strong {
+  color: var(--oc-text-strong);
+}
+.oc-text-soft {
+  color: var(--oc-text-soft);
+}
+.oc-text-faint {
+  color: var(--oc-text-faint);
+}
+.oc-link {
+  color: var(--oc-accent);
+}
+.oc-link:hover {
+  color: var(--oc-accent-hover);
+}
+
+/* Scrollbars (apply both modes; colors shift via tokens) */
+.oc-scrollbars::-webkit-scrollbar {
+  width: 10px;
+}
+.oc-scrollbars::-webkit-scrollbar-track {
+  background: var(--oc-surface-800);
+}
+.oc-scrollbars::-webkit-scrollbar-thumb {
+  background: var(--oc-surface-600);
+  border-radius: 6px;
+}
+.oc-scrollbars::-webkit-scrollbar-thumb:hover {
+  background: var(--oc-border-strong);
+}
+
+/* Focus ring helper */
+.focus-visible:focus {
+  outline: 2px solid var(--oc-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Transition helpers for theme toggle smoothness */
+.theme-transition * {
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
